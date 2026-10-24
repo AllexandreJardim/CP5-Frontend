@@ -1,0 +1,73 @@
+.download {
+  overflow-x: clip;
+  padding-block: var(--section-space);
+}
+
+.download_card {
+  position: relative;
+  padding: 48px 24px 240px;
+  background-color: var(--surface-color);
+  border: 1px solid var(--stroke-color);
+  border-radius: var(--radius-card);
+}
+
+.download_content {
+  position: relative;
+  z-index: 2;
+}
+
+.download_title {
+  margin-top: 8px;
+}
+
+.download_text {
+  margin-top: 8px;
+}
+
+.download_stores {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  margin-top: 40px;
+}
+
+.download_stores img {
+  height: 56px;
+  width: auto;
+}
+
+.download_person {
+  position: absolute;
+  right: -70px;
+  bottom: 0;
+  z-index: 1;
+  width: auto;
+  height: 330px;
+  max-width: none;
+}
+
+@media (min-width: 768px) {
+  .download_stores {
+    flex-direction: row;
+    gap: 16px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .download_card {
+    display: flex;
+    align-items: center;
+    min-height: 540px;
+    padding: 80px 80px;
+  }
+
+  .download_content {
+    max-width: 640px;
+  }
+
+  .download_person {
+    right: -40px;
+    height: 636px;
+  }
+}

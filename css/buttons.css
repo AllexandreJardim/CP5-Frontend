@@ -1,0 +1,82 @@
+.btn {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  --btn-py: 16px;
+  --btn-px: 24px;
+  --btn-stroke: 1.5px;
+  padding: calc(var(--btn-py) - var(--btn-stroke)) calc(var(--btn-px) - var(--btn-stroke));
+  border: var(--btn-stroke) solid transparent;
+  border-radius: var(--radius-button);
+  font-family: var(--font-family);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: color 0.25s ease, border-color 0.25s ease;
+}
+
+.btn_sm {
+  --btn-py: 12.5px;
+  --btn-px: 15px;
+  font-size: 14px;
+}
+
+.btn_block {
+  display: flex;
+  width: 100%;
+}
+
+.btn_primary {
+  background-color: var(--text-color-primary);
+  color: var(--background-color);
+}
+
+.btn_primary::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: var(--brand-gradient);
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.btn_primary:hover::before,
+.btn_primary:focus-visible::before {
+  opacity: 1;
+}
+
+.btn_secondary {
+  background-color: transparent;
+  border-color: var(--text-color-primary);
+  color: var(--text-color-primary);
+}
+
+.btn_secondary:hover,
+.btn_secondary:focus-visible {
+  border-color: var(--brand-color-primary);
+  color: var(--brand-color-primary);
+}
+
+@media (min-width: 768px) {
+  .btn_sm {
+    --btn-py: 16px;
+    --btn-px: 24px;
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .btn_lg {
+    --btn-py: 19px;
+    --btn-px: 32px;
+    font-size: 18px;
+  }
+}
